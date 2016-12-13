@@ -5,7 +5,7 @@ const knex = require('../knexconnect')
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   knex('book')
-  .select('Title', 'Page_Count')
+  .select('ID', 'Title', 'Page_Count')
   .then((books) =>{
     res.render('books', {data:books});
 

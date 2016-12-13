@@ -1,11 +1,10 @@
 
-<ul>
+<ul class="collection">
   {{#each data}}
-    <li>
-      <a href="/{{this.Title}}">
+
+      <a href="/books/{{this.ID}}" class="collection-item">
         {{this.Title}}
-        Number of Pages{{this.Page_Count}}
       </a>
-    </li>
+    
   {{/each}}
 </ul>
