@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
   knex('book')
   .select('Title', 'Page_Count as Number of Pages')
   .then((books) =>{
-    res.render('viewall', {data:books});
+    res.render('books', {data:books});
 
 
   })
