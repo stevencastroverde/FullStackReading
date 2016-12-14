@@ -1,29 +1,29 @@
 <div class="row">
-    <form class="col s12" action="/new" method="post">
+    <form class="col s12" action="/new/book" method="post">
         <div class="row">
             <div class="input-field col s6">
-                <input placeholder="Title of Book" id='title'  name="Title" value="" type="text" class="validate">
+                <input placeholder="Title of Book" id='title'  name="Title" value="" required='true' type="text" class="validate">
             </div>
             <div class="input-field col s6">
-                <input id="page_count" placeholder="Number of Pages" name="Page_count" value="" type="number" class="validate">
+                <input id="page_count" placeholder="Number of Pages" name="Page_Count" required='true' value="" type="number" class="validate">
 
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <input id="language" placeholder="Programming Language" name="programming_language" value="" type="text" class="validate">
+                <input id="language" placeholder="Programming Language" name="Programming_Languages" value="" type="text" class="validate">
 
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <input id="isbn" placeholder="ISBN" type="number" class="validate">
+                <input id="isbn" placeholder="isbn" type="number" name='ISBN' required='true' class="validate">
 
             </div>
         </div>
 </div>
 
-<button class="btn waves-effect waves-light" name="submit" type="submit">Add Book!
+<button class="btn waves-effect waves-light"  type="submit">Add Book!
    <i class="material-icons right">send</i>
  </button>
 </form>

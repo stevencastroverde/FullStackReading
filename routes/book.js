@@ -6,6 +6,7 @@ const knex = require('../knexconnect')
 router.get('/', function(req, res, next) {
   knex('book')
   .select('ID', 'Title', 'Page_Count')
+  .orderBy('ID', 'ASC')
   .then((books) =>{
     res.render('books', {data:books});
 
@@ -29,6 +30,16 @@ router.get('/:id', function(req,res){
 
  })
 
+router.delete('/:id', function(req,res){
+  knex('book')
+  .where('ID', req.params.id)
+  .del()
+  .then(() => res.redirect('/books'));
+
+
+
+
+})
 
 
 module.exports = router;

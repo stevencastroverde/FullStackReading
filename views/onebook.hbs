@@ -2,15 +2,37 @@
 
 
 <h1>{{data.Title}}</h1>
+<div class="section">
+  <h5>Number of Pages:</h5>
+  <p>
+    {{data.Page_Count}}
+  </p>
+</div>
+<div class="section">
+
+
+{{#if data.Programming_Languages}}
+  <h5>Language(s) Covered:</h5>
 <p>
-  Number of Pages:
-  {{data.Page_Count}}
 
-  Language(s) Covered:
-  {{data.programming_language}}
+  {{data.Programming_Languages}}
+  {{/if}}
+  </p>
+</div>
+<div class="section">
+  <h5>ISBN:</h5>
+  <p>
 
-  ISBN:
   {{data.ISBN}}
 </p>
+</div>
+<div class="buttons row">
 
-<a class="btn waves-light">Mark as Read</a>
+  <form action='/books/{{data.ID}}?_method=DELETE' method='POST' >
+    <button class="btn waves-effect waves-light col s4" type="submit" name="action">Delete From List
+      <i class="material-icons right">delete</i>
+    </button>
+  </form>
+
+  <a class="btn waves-light col s4 offset-s2" href="/update/{{data.ID}}">Update Info</a>
+</div>
